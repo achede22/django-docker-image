@@ -1,6 +1,6 @@
 
-# Create Dockerfile and push on Docker Hub
-In a folder I create a file named Dockerfile and another named requirements.txt
+## STEP 1 - Create Dockerfile and push it on Docker Hub
+In a folder I create a file named Dockerfile and an another named requirements.txt
 
 Dockerfile
 ```
@@ -38,7 +38,7 @@ django-mptt==0.8.6
 
 ```
 
-build the image locally:
+from terminal inside the folder, I build the local image:
 ```
 docker build -t django .
 ```
@@ -48,21 +48,21 @@ tag the local image:
 docker tag django pierangelo1982/django
 ```
 
-login to your docker account:
+sign in to your docker account:
 ```
 docker login
 ```
 
-push the image on your account:
+push the image on your Docker Hub account:
 ```
 docker push pierangelo1982/django
 ```
 
-P.S: pierangelo1982is my username for docker account, change this with yours...
+P.S: P.S: pierangelo1982 is my docker account username, change it with yours.
 
 
 
-### STEP 2 - use and implementation
+## STEP 2 - Use and implementation
 
 # pull the image:
 ```
