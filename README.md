@@ -40,7 +40,7 @@ django-mptt==0.8.6
 
 build the image locally:
 ```
-
+docker build -t django .
 ```
 
 tag the local image:
