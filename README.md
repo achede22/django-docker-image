@@ -58,22 +58,25 @@ push the image on your Docker Hub account:
 docker push pierangelo1982/django
 ```
 
-P.S: P.S: pierangelo1982 is my docker account username, change it with yours.
+P.S: pierangelo1982 is my docker account username, change it with yours.
 
 
 
-## STEP 2 - Use and implementation
+## STEP 2 - create and implement container
 
 # pull the image:
 ```
 docker pull pierangelo1982/django
 ```
 
-# create a volume
+For work and implement our project, we have need to share the project folders of the container on our local host.
+For do that we have need to build a volume and copy the file.
+
+create a volume:
 ```
 docker volume create --name django-volume
 ```
-# connect the volume to the container for can copy the project folder
+connect the volume to the container for can copy the project folder
 ```
 docker run --name django-test \
 	-v django-volume:/code \
@@ -81,17 +84,17 @@ docker run --name django-test \
 	-d pierangelo1982/django
 ```
 
-# copy project folder in your host
+copy project folders in your host
 ```
 docker cp django-test:/code ~/my/local/path/myfolder
 ```
 
-# remove container
+remove the container
 ```
 docker rm -f django-test
 ```
 
-# create the project with the volume that poit to our local folder
+recreate the container with the volume that point to our local folder where before we have copy the folders of the project.
 ```
 docker run --name django-test \
 	-v ~/my/local/path/myfolder:/code \
@@ -99,14 +102,16 @@ docker run --name django-test \
 	-d pierangelo1982/django
 ```
 
-# implement with new app etc...
+# Using django and python commands:
 ```
 docker exec django-test python manage.py
 ```
 
-# install new packages
+# how install new packages:
 ```
 docker exec django-pierangelo pip install
 ```
+
+
 
 
