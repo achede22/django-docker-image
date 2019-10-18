@@ -1,4 +1,4 @@
-Django==1.9.8
+django==1.9.8
 django-filer==1.2.5
 django-filter==1.0.0
 django-image-cropping==1.0.4
